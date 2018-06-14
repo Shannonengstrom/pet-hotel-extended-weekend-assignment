@@ -3,7 +3,7 @@ const app = angular.module( 'app', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/home.html',
-        controller: 'HomeController as vm'
+        // controller: 'HomeController as vm'
     }).when('/pet-dashboard', {
         templateUrl: 'views/pet-dashboard.html',
         controller: 'PetController as vm'

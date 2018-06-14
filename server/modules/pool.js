@@ -1,6 +1,6 @@
-var pg = require('pg');
+const pg = require('pg');
 
-var config = {
+const config = {
     database: 'pet-hotel',
     host: 'localhost',
     port: '5432',

@@ -1,0 +1,31 @@
+<h1>pet dashboard</h1>
+
+<h2>Add Pet</h2>
+<form>
+    <input type="text" placeholder="Pet Name" ng-model="vm.petNameIn">
+    <input type="text" placeholder="Pet Color" ng-model="vm.colorIn">
+    <input type="text" placeholder="Pet Breed" ng-model="vm.breedIn">
+    <select ng-model="vm.ownerNameIn"> -->
+        <!-- <option ng-repeat="REPEAT FUNCTION?" value="PERSONS name?">OWNER NAME</option> -->
+    <input type="submit" ng-click="vm.addPet()"> 
+</form>
+
+
+<h2>History</h2>
+
+<table>
+    <th>Owner</th>
+    <th>Pet</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Checked in</th>
+    <th>Actions</th>
+    <tbody>
+        <tr ng-repeat="pet in vm.pets"> 
+            <td>{{pet.owners_id}}</td>
+            <td>{{pet.pet_name}}</td>
+            <td>{{pet.color}}</td>
+            <td>{{pet.breed}}</td>
+        </tr>
+    </tbody>
+</table>

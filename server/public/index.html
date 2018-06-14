@@ -15,17 +15,27 @@
 <!-- Controllers -->
 <script src="scripts/controllers/owner.controller.js"></script>
 <script src="scripts/controllers/pet.controller.js"></script>
+<script src="scripts/controllers/home.controller.js"></script>
+
 
 <!-- Services -->
 <script src="scripts/services/owner.service.js"></script>
 <script src="scripts/services/pet.service.js"></script>
 
+
 <!-- Styles -->
-<link rel="stylesheet" href="vendors/styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
+<!-- favicon -->
+<link rel="shortcut icon" href="styles/favicon.ico" type="image/x-icon">
+
 </head>
-<body>
-    
+<header>Pet Hotel</header>
+<body ng-app="app">
+    <a href="#!">Home</a>
+    <a href="#!owners">Owners</a>
+    <a href="#!pet-dashboard">Pets</a>
+    <ng-view></ng-view>
 </body>
 </html>

@@ -25,6 +25,7 @@ app.service('PetService', function($http) {
         }).then(function(response) {
             console.log('response to POST', response);
             sv.allPets = response.data;
+            sv.getPet();
         }).catch(function(err) {
             console.log('error in POST', err);    
         });

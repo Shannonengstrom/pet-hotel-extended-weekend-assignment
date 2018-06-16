@@ -5,11 +5,9 @@
     <input type="text" placeholder="Pet Name" ng-model="vm.petNameIn">
     <input type="text" placeholder="Pet Color" ng-model="vm.colorIn">
     <input type="text" placeholder="Pet Breed" ng-model="vm.breedIn">
-    <select ng-model="vm.ownerNameIn"><option ng-repeat="owner in vm.owners">{{owner.first_name}} {{owner.last_name}}</option></select>
-    <input type="submit" ng-click="vm.addPet()"> 
+    <select ng-model="vm.ownerNameIn"><option ng-repeat="owner in vm.owners" value="{{owner.id}}">{{owner.first_name}}</option></select>
+    <input type="submit" ng-click="vm.postPet()"> 
 </form>
-    <!-- <select ng-model="vm.ownerNameIn">
-        <span ng-repeat="owner in vm.owners"><option value="{{owner.first_name}} {{owner.last_name}}">{{owner}}</option></span> -->
     
 <h2>History</h2>
 

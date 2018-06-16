@@ -17,11 +17,11 @@ app.controller('PetController', function(PetService, OwnerService){
         }   
     )};
 
-    vm.addPet = function (petToSend) {
-        console.log('addPet');
-        console.log(vm.petToSend);
-        PetService.postPet(vm.petToSend);  
-    }
+    // vm.addPet = function (petToSend) {
+    //     console.log('addPet');
+    //     console.log(vm.petToSend);
+    //     PetService.postPet(vm.petToSend);  
+    // }
 
     vm.postPet = function () {
         console.log('postPet');
@@ -29,10 +29,10 @@ app.controller('PetController', function(PetService, OwnerService){
            pet_name : vm.petNameIn,
            color : vm.colorIn,
            breed : vm.breedIn, 
-           owner : vm.ownerNameIn
+           owners_id : vm.ownerNameIn
         }
         console.log(pet);
-        PetService.postOwner(pet).then(function() {
+        PetService.postPet(pet).then(function() {
             vm.getPets();  
     });
     }

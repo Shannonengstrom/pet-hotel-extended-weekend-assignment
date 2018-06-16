@@ -24,7 +24,7 @@ app.controller('PetController', function(PetService, OwnerService){
     // }
 
     vm.postPet = function () {
-        console.log('postPet');
+        console.log('postPet', vm.owners);
         pet = {
            pet_name : vm.petNameIn,
            color : vm.colorIn,

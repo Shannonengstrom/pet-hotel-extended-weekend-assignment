@@ -36,7 +36,7 @@ app.service('OwnerService', function($http) {
         console.log(owner.id);
         return $http({
             method: 'DELETE', 
-            url: `/owners/${owner.id}`
+            url: `/owner/${owner.id}`
         }).then(function(response) {
             console.log('delete owner', response);
         }).catch(function(err){

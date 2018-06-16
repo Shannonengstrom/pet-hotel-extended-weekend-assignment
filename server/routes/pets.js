@@ -30,9 +30,21 @@ router.post('/', (req, res) => {
             res.sendStatus(200);
         }).catch((err) => {
             console.log('error in router POST', err);
-        });
+        });     
+});
 
-        
+
+router.delete('/:id', function (req, res) {
+    console.log(`DELETE params ID`, req.params.id);
+    petId = req.params.id
+    const queryText = `DELETE FROM pets WHERE id = $1;`;
+    pool.query(queryText, [petId])
+        .then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error making pets delete query', error);
+        res.sendStatus(500);
+    });
 });
 
 module.exports = router; 

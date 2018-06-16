@@ -22,10 +22,10 @@ app.controller('OwnerController', function(OwnerService){
     });
     }
 
-    vm.deleteOwner = function (owner) {
+    vm.deleteOwner = function(owner) {
         console.log(owner);
         OwnerService.deleteOwner(owner).then(function() {
-            vm.getOwner();
+            vm.getOwners();
         });
     }
     vm.getOwners(); 

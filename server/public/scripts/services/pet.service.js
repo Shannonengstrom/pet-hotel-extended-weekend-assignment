@@ -31,5 +31,17 @@ app.service('PetService', function($http) {
         });
     };
 
+    sv.deletePet = function (pet) {
+        console.log(pet.id);
+        return $http({
+            method: 'DELETE', 
+            url: `/pet/${pet.id}`
+        }).then(function(response) {
+            console.log('delete pet', response);
+            sv.getPet();
+        }).catch(function(err){
+            console.log('error in service DELETE of pet', err);
+        });
+    };
 
 })

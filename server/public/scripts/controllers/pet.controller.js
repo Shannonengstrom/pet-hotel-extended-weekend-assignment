@@ -17,12 +17,6 @@ app.controller('PetController', function(PetService, OwnerService){
         }   
     )};
 
-    // vm.addPet = function (petToSend) {
-    //     console.log('addPet');
-    //     console.log(vm.petToSend);
-    //     PetService.postPet(vm.petToSend);  
-    // }
-
     vm.postPet = function () {
         console.log('postPet', vm.owners);
         pet = {
@@ -35,6 +29,14 @@ app.controller('PetController', function(PetService, OwnerService){
         PetService.postPet(pet).then(function() {
             vm.getPets();  
     });
+    }
+
+
+    vm.deletePet = function(pet) {
+        console.log(pet);
+        PetService.deletePet(pet).then(function() {
+            vm.getPets();
+        });
     }
 
     vm.getPets(); 

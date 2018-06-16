@@ -5,12 +5,12 @@
     <input type="text" placeholder="Pet Name" ng-model="vm.petNameIn">
     <input type="text" placeholder="Pet Color" ng-model="vm.colorIn">
     <input type="text" placeholder="Pet Breed" ng-model="vm.breedIn">
-    <select ng-model="vm.ownerNameIn">
-        <span ng-repeat="owner in vm.owners"><option value="{{owner.first_name}} {{owner.last_name}}">{{owner}}</option></span>
+    <select ng-model="vm.ownerNameIn"><option ng-repeat="owner in vm.owners">{{owner.first_name}} {{owner.last_name}}</option></select>
     <input type="submit" ng-click="vm.addPet()"> 
 </form>
-
-
+    <!-- <select ng-model="vm.ownerNameIn">
+        <span ng-repeat="owner in vm.owners"><option value="{{owner.first_name}} {{owner.last_name}}">{{owner}}</option></span> -->
+    
 <h2>History</h2>
 
 <table>
@@ -22,7 +22,7 @@
     <th>Actions</th>
     <tbody>
         <tr ng-repeat="pet in vm.pets"> 
-            <td>{{pet.first_name}} {{pet.last_name}}</td>
+            <td>{{pet.first_name}}</td>
             <td>{{pet.pet_name}}</td>
             <td>{{pet.color}}</td>
             <td>{{pet.breed}}</td>

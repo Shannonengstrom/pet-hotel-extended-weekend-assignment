@@ -1,6 +1,14 @@
-app.controller('PetController', function(PetService){
+app.controller('PetController', function(PetService, OwnerService){
     let vm = this;
     vm.pets = []; 
+
+    vm.getOwners = function () {
+        console.log('getOwner');
+        OwnerService.getOwner().then(function(response) {
+            vm.owners = OwnerService.results; 
+            console.log(vm.owners);
+        }
+    )};
 
     vm.getPets = function () {
         console.log('getPet');
@@ -30,6 +38,8 @@ app.controller('PetController', function(PetService){
     }
 
     vm.getPets(); 
+    vm.getOwners(); 
+
 
 
 });

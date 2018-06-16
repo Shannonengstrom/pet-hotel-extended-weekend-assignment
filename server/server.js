@@ -11,8 +11,8 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({encoded: true}));
 app.use(bodyParser.json());
 
-app.use('/pets', pet);
-app.use( '/owners', owner);
+app.use('/pet', pet);
+app.use( '/owner', owner);
 
 app.listen(port, function() {
     console.log('listening on port', port);

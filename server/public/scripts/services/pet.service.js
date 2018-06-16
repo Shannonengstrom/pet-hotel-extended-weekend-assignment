@@ -3,26 +3,27 @@ app.service('PetService', function($http) {
 
     let sv = this; 
     sv.allPets = []; 
+
     sv.getPet = function () {
         return $http({
             method: 'GET',
-            url: '/pets'
+            url: '/pet'
         }).then(function(response) {
             console.log('response for GET', response);
-            sv.allPets = response.data;
+            sv.results = response.data;
         }).catch(function(err) {
             console.log('GET error', err);
         });
     };
 
-    sv.postPet = function (petToSend) {
-        console.log('logging petToSend', petToSend);
+    sv.postPet = function (pet) {
+        console.log('logging pet', pet);
         return $http({
             method: 'POST', 
-            url: '/pets', 
-            data: petToSend
+            url: '/pet', 
+            data: pet
         }).then(function(response) {
-            console.log('response to POST', response.data);
+            console.log('response to POST', response);
             sv.allPets = response.data;
         }).catch(function(err) {
             console.log('error in POST', err);    

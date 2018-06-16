@@ -3,8 +3,9 @@
 <h2>Add Owner</h2>
 
 <form>
-    <input type="text" placeholder="Owner Name" ng-model="vm.ownerNameIn">
-    <input type="submit" ng-click="vm.addOwner()"> 
+    <input type="text" placeholder="First Name" ng-model="vm.firstNameIn">
+    <input type="text" placeholder="Last Name" ng-model="vm.lastNameIn">
+    <input type="submit" ng-click="vm.postOwner()"> 
 </form>
 
 
@@ -14,8 +15,11 @@
     <th>Name</th>
     <th>Number of Pets</th>
     <th>Actions</th>
+    <tbody>
+        <tr ng-repeat="owner in vm.owners"> 
+            <td>{{owner.first_name}}</td>
+            <td>{{owner.count}}</td>
+            <td><button ng-click="vm.deleteOwner(owner)">delete</button></td>
+        </tr>
+    </tbody>
 </table>
-
-<!-- <table>
-    <tr></tr>
-</table> -->

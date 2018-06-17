@@ -44,4 +44,20 @@ app.service('PetService', function($http) {
         });
     };
 
+
+    sv.putPet = function (pet) {
+        console.log('logging pet', pet.id);
+        return $http({
+            method: 'PUT', 
+            url: `/pet/${pet.id}` 
+            // data: pet
+        }).then(function(response) {
+            console.log('response to PUT', response);
+            sv.allPets = response.data;
+            sv.getPet();
+        }).catch(function(err) {
+            console.log('error in PUT', err);    
+        });
+    };
+
 })

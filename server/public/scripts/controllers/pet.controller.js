@@ -23,22 +23,30 @@ app.controller('PetController', function(PetService, OwnerService){
            pet_name : vm.petNameIn,
            color : vm.colorIn,
            breed : vm.breedIn, 
-           owners_id : vm.ownerNameIn
+           owners_id : vm.ownerNameIn,
+           is_checked_in : null
         }
         console.log(pet);
         PetService.postPet(pet).then(function() {
             vm.getPets();  
-    });
-    }
+        }
+    )};
 
 
     vm.deletePet = function(pet) {
         console.log(pet);
         PetService.deletePet(pet).then(function() {
             vm.getPets();
-        });
-    }
+        }
+    )};
 
+    vm.putPet = function(pet) {
+        console.log(pet);
+        PetService.putPet(pet).then(function() {
+            vm.getPets();
+        }
+    )};
+    
     vm.getPets(); 
     vm.getOwners(); 
 

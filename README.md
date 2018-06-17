@@ -1,6 +1,6 @@
 # pet-hotel-extended-weekend-assignment
 
-[] delete for pets
+[x] delete for pets
 [] checkin
  - on click switch default to date of status column
  - use ng-switch

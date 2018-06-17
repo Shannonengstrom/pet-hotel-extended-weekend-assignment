@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     console.log('in router GET');
     const queryText = `SELECT * FROM pets
     JOIN owners ON pets.owners_id = owners.id;`;
@@ -18,13 +18,10 @@ router.get('/', function (req, res) {
 router.post('/', (req, res) => {
     console.log('in router.POST to create new pet', req.body );
     const newPet = req.body; 
-    const queryText = `INSERT INTO pets ("pet_name", "color", "breed", "owners_id") 
-    VALUES ($1, $2, $3, $4);`;
-    pool.query(queryText, [newPet.pet_name, newPet.color, newPet.breed, newPet.owners_id ])
+    const queryText = `INSERT INTO pets ("pet_name", "color", "breed", "owners_id", "is_checked_in") 
+    VALUES ($1, $2, $3, $4, $5);`;
+    pool.query(queryText, [newPet.pet_name, newPet.color, newPet.breed, newPet.owners_id, newPet.is_checked_in ])
         .then((result) => {    
-    // const queryTextB = `INSERT INTO owners ("id") 
-    // VALUES ($1);`;
-    // pool.query(queryTextB, [newPet.id])
         }).then((result) => { 
             console.log('back from DB', result);
             res.sendStatus(200);
@@ -34,9 +31,9 @@ router.post('/', (req, res) => {
 });
 
 
-router.delete('/:id', function (req, res) {
+router.delete('/:id', (req, res) => {
     console.log(`DELETE params ID`, req.params.id);
-    petId = req.params.id
+    const petId = req.params.id
     const queryText = `DELETE FROM pets WHERE id = $1;`;
     pool.query(queryText, [petId])
         .then((result) => {
@@ -47,4 +44,19 @@ router.delete('/:id', function (req, res) {
     });
 });
 
-module.exports = router; 
+router.put( '/:id', (req, res) => {
+    console.log('in router.put', req.params, req.body);
+    const petId = req.params.id; 
+    const checkedIn = req.body;
+    const queryText = `UPDATE pets SET is_checked_in = CURRENT_TIMESTAMP where is_checked_in IS NULL AND id=$1;`;
+    pool.query(queryText, [petId, checkedIn])
+        .then( (result) => {
+            console.log('updated pet with checkin date', petId, checkedIn);
+            res.sendStatus(200);
+        }).catch((err) => {
+            console.log('error updating pet with checkedin date', petId, checkedIn);
+            res.sendStatus(500);
+        });
+});
+
+module.exports = router;  

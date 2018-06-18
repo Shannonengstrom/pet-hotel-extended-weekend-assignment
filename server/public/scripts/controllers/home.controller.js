@@ -1,3 +1,3 @@
-app.controller('HomeController', function(){
+app.controller('HomeController', function () {
     let vm = this;
 });

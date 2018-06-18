@@ -1,5 +1,5 @@
-const express = require('express'); 
-const router = express.Router(); 
+const express = require('express');
+const router = express.Router();
 const pool = require('../modules/pool');
 
 
@@ -17,17 +17,17 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', (req, res) => {
-    console.log('in router.POST to create new owner', req.body );
-    const newOwner = req.body; 
+    console.log('in router.POST to create new owner', req.body);
+    const newOwner = req.body;
     const queryText = `INSERT INTO owners ("first_name", "last_name")  
     VALUES ($1, $2);`;
-    pool.query(queryText, [newOwner.first_name, newOwner.last_name ])
+    pool.query(queryText, [newOwner.first_name, newOwner.last_name])
         .then((result) => {
-        console.log('back from DB', result);
-        res.sendStatus(200);
-    }).catch((err) => {
-        console.log('error in router POST', err);
-    });
+            console.log('back from DB', result);
+            res.sendStatus(200);
+        }).catch((err) => {
+            console.log('error in router POST', err);
+        });
 });
 
 router.delete('/:id', function (req, res) {
@@ -36,11 +36,11 @@ router.delete('/:id', function (req, res) {
     const queryText = `DELETE FROM owners WHERE id = $1;`;
     pool.query(queryText, [ownerId])
         .then((result) => {
-        res.sendStatus(200);
-    }).catch((error) => {
-        console.log('error making owners delete query', error);
-        res.sendStatus(500);
-    });
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error making owners delete query', error);
+            res.sendStatus(500);
+        });
 });
 
-module.exports = router; 
+module.exports = router;

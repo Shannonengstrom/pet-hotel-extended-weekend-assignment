@@ -1,25 +1,32 @@
-<h1>owner dashboard</h1>
+<div class="container">
+    <br>
+    <h2>Owner Dashboard</h2>
+    <br>
+    <h3>Add Owner</h3>
+</div>
+<br>
+<div class="container">
+    <form>
+        <input type="text" placeholder="First Name" ng-model="vm.firstNameIn">
+        <input type="text" placeholder="Last Name" ng-model="vm.lastNameIn">
+        <input type="submit" ng-click="vm.postOwner()">
+    </form>
+    <br>
+    <h3>History</h3>
 
-<h2>Add Owner</h2>
+    <table class="table">
+        <th>Name</th>
+        <th>Number of Pets</th>
+        <th>Actions</th>
+        <tbody>
+            <tr ng-repeat="owner in vm.owners">
+                <td>{{owner.first_name}}</td>
+                <td>{{owner.count}}</td>
+                <td>
+                    <button ng-click="vm.deleteOwner(owner)">delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-<form>
-    <input type="text" placeholder="First Name" ng-model="vm.firstNameIn">
-    <input type="text" placeholder="Last Name" ng-model="vm.lastNameIn">
-    <input type="submit" ng-click="vm.postOwner()"> 
-</form>
-
-
-<h2>History</h2>
-
-<table>
-    <th>Name</th>
-    <th>Number of Pets</th>
-    <th>Actions</th>
-    <tbody>
-        <tr ng-repeat="owner in vm.owners"> 
-            <td>{{owner.first_name}}</td>
-            <td>{{owner.count}}</td>
-            <td><button ng-click="vm.deleteOwner(owner)">delete</button></td>
-        </tr>
-    </tbody>
-</table>
+</div>

@@ -1,6 +1,6 @@
-const app = angular.module( 'app', ['ngRoute']);
+const app = angular.module('app', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/home.html',
         // controller: 'HomeController as vm'

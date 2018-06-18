@@ -2,7 +2,7 @@
 
 [x] delete for pets
 [] checkin
- - on click switch default to date of status column
- - use ng-switch
+ - figure out get and put for checkedInPet
 [] don't delete owner unless there are no pets 
+[] remove milliseconds on DOM
 [] make it pretty - angular material

@@ -56,6 +56,5 @@ GROUP BY owners.first_name, owners.id;
 DELETE FROM pets WHERE id = 6;
 
 UPDATE pets
-SET is_checked_in = CURRENT_TIMESTAMP where is_checked_in IS NULL AND id=3;
-
-
+SET is_checked_in = CURRENT_TIMESTAMP IS NULL AND id=2;
+SELECT * FROM pets WHERE id=2;

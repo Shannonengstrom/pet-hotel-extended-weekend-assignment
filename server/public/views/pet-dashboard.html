@@ -5,13 +5,14 @@
     <h5>Add Pet</h5>
 </div>
 <br>
-<div class="container">
+<div class="container form-group">
     <form>
         <input type="text" placeholder="Pet Name" ng-model="vm.petNameIn">
         <input type="text" placeholder="Pet Color" ng-model="vm.colorIn">
         <input type="text" placeholder="Pet Breed" ng-model="vm.breedIn">
-        <select ng-model="vm.ownerNameIn">
+        <select ng-model="vm.ownerNameIn" class="dropdown btn-light">
             <option ng-repeat="owner in vm.owners" value="{{owner.id}}">{{owner.first_name}}</option>
+            <option value="">Select Owner</option>
         </select>
         <input class="btn btn-light" type="submit" ng-click="vm.postPet()">
     </form>
@@ -20,12 +21,14 @@
     <h5>History</h5>
 
     <table class="table">
-        <th>Owner</th>
-        <th>Pet</th>
+        <thead>
+        <th>Owner Name</th>
+        <th>Pet Name</th>
         <th>Breed</th>
         <th>Color</th>
-        <th>Checked in</th>
+        <th>Check-In Date</th>
         <th>Actions</th>
+        </thead>
         <tbody>
             <tr ng-repeat="pet in vm.pets">
                 <td>{{pet.first_name}}</td>

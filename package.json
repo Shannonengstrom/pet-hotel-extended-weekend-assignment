@@ -1,7 +1,7 @@
 {
   "name": "pet-hotel-extended-weekend-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "[x] delete for pets [] checkin  - figure out get and put for checkedInPet [] don't delete owner unless there are no pets  [] remove milliseconds on DOM [] make it pretty - angular material",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",

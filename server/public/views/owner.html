@@ -1,18 +1,18 @@
 <div class="container">
     <br>
-    <h2>Owner Dashboard</h2>
+    <h3>Owner Dashboard</h3>
     <br>
-    <h3>Add Owner</h3>
+    <h5>Add Owner</h5>
 </div>
 <br>
 <div class="container">
     <form>
         <input type="text" placeholder="First Name" ng-model="vm.firstNameIn">
         <input type="text" placeholder="Last Name" ng-model="vm.lastNameIn">
-        <input type="submit" ng-click="vm.postOwner()">
+        <input class="btn btn-light" type="submit" ng-click="vm.postOwner()">
     </form>
     <br>
-    <h3>History</h3>
+    <h5>History</h5>
 
     <table class="table">
         <th>Name</th>
@@ -23,7 +23,7 @@
                 <td>{{owner.first_name}}</td>
                 <td>{{owner.count}}</td>
                 <td>
-                    <button ng-click="vm.deleteOwner(owner)">delete</button>
+                    <button type="button" class="btn btn-light" ng-click="vm.deleteOwner(owner)">delete</button>
                 </td>
             </tr>
         </tbody>

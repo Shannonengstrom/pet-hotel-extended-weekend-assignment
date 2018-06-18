@@ -28,18 +28,20 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"> -->
-    <!-- favicon -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">    <!-- favicon -->
     <link rel="shortcut icon" href="styles/favicon.ico" type="image/x-icon">
 
 </head>
-<header>Pet Hotel</header>
-<nav>
+<div class="jumbotron">
+<h1>Pet Hotel</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <body ng-app="app">
-        <a href="#!/">Home</a>
-        <a href="#!/owner">Owners</a>
-        <a href="#!/pet-dashboard">Pets</a>
+        <a class="navbar-brand" href="#!/">Home</a>
+        <a class="navbar-brand" href="#!/owner">Owners</a>
+        <a class="navbar-brand" href="#!/pet-dashboard">Pets</a>
 </nav>
 <ng-view></ng-view>
 </body>

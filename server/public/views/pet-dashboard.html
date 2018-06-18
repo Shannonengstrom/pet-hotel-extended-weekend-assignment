@@ -1,8 +1,8 @@
 <div class="container">
     <br>
-    <h2>Pet Dashboard</h2>
+    <h3>Pet Dashboard</h3>
     <br>
-    <h3>Add Pet</h3>
+    <h5>Add Pet</h5>
 </div>
 <br>
 <div class="container">
@@ -13,11 +13,11 @@
         <select ng-model="vm.ownerNameIn">
             <option ng-repeat="owner in vm.owners" value="{{owner.id}}">{{owner.first_name}}</option>
         </select>
-        <input type="submit" ng-click="vm.postPet()">
+        <input class="btn btn-light" type="submit" ng-click="vm.postPet()">
     </form>
     <br>
 
-    <h3>History</h3>
+    <h5>History</h5>
 
     <table class="table">
         <th>Owner</th>
@@ -34,8 +34,8 @@
                 <td>{{pet.breed}}</td>
                 <td>{{pet.is_checked_in | date: 'MM/dd/yyyy' }}</td>
                 <td>
-                    <button ng-click="vm.putPet(pet)">check-in</button>
-                    <button ng-click="vm.deletePet(pet)">delete</button>
+                    <button type="button" class="btn btn-light" ng-click="vm.putPet(pet)">check-in</button>
+                    <button type="button" class="btn btn-light" ng-click="vm.deletePet(pet)">delete</button>
                 </td>
             </tr>
         </tbody>

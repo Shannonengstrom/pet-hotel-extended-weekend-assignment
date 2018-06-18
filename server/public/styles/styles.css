@@ -1,12 +1,18 @@
-/* header {
+.jumbotron {
     width: 100%;
-    color: black;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	color: black;
+	height: 100px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	background-color: PowderBlue;
-
+}
+body {
+	font-family: 'Raleway', sans-serif;
 }
 
+
+
+/* 
 h1 {
 	text-align: center;
 	color: black;

@@ -2,9 +2,12 @@
 
 
 Questions for Mary or Dev: 
-[] delete for pets: 
-- Was working Monday morning and then it broke after Josh and I were trying to fix my PUT.
-[] PUT has never worked. Same issue as I'm having with my DELETE. I have it working server side but it is not updating the DOM. It is grabbing the ID. 
+[] PUT has never worked. On click, it grabs the right ID and then throws this error: error: syntax error at or near "WHERE is_checked_in"
+
+My query: 
+```UPDATE pets```
+```SET is_checked_in = CURRENT_TIMESTAMP WHERE is_checked_in IS NULL AND id=$1;`;```
+
 [] How would I only delete owners when they have 0 pets?
 
 Let me know if you need more details!

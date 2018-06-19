@@ -45,32 +45,32 @@ app.service('PetService', function ($http) {
     };
 
 
-    // sv.putPet = function (pet) {
-    //     console.log('logging pet', pet.id);
-    //     return $http({
-    //         method: 'PUT',
-    //         url: `/pet/${pet.id}`,
-    //         data: pet
-    //     }).then(function (response) {
-    //         console.log('response to PUT', response);
-    //         sv.allPets = response.data;
-    //         sv.getCheckedInPet();
-    //     }).catch(function (err) {
-    //         console.log('error in PUT', err);
-    //     });
-    // };
+    sv.putPet = function (pet) {
+        console.log('logging pet', pet.id);
+        return $http({
+            method: 'PUT',
+            url: `/pet/${pet.id}`,
+            data: pet
+        }).then(function (response) {
+            console.log('response to PUT', response);
+            sv.allPets = response.data;
+            sv.getCheckedInPet();
+        }).catch(function (err) {
+            console.log('error in PUT', err);
+        });
+    };
 
-    // sv.getCheckedInPet = function (pet) {
-    //     console.log('logging pet', pet.id);
-    //     return $http({
-    //         method: 'GET',
-    //         url: `/pet/${pet.id}`
-    //     }).then(function (response) {
-    //         console.log('response for checkedin pet GET', response);
-    //         sv.results = response.data;
-    //     }).catch(function (err) {
-    //         console.log('GET error', err);
-    //     });
-    // };
+    sv.getCheckedInPet = function (pet) {
+        console.log('logging pet', pet.id);
+        return $http({
+            method: 'GET',
+            url: `/pet/${pet.id}`
+        }).then(function (response) {
+            console.log('response for checkedin pet GET', response);
+            sv.results = response.data;
+        }).catch(function (err) {
+            console.log('GET error', err);
+        });
+    };
 
 })

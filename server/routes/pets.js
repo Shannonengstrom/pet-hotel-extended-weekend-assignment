@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
             console.log('updated pet with checkin date', petId);
             res.sendStatus(200);
         }).catch((err) => {
-            console.log('error updating pet with checkedin date', petId);
+            console.log('error updating pet with checkedin date', err);
             res.sendStatus(500);
         });
 });
@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
 
 router.get('/:id', (req, res) => {
     console.log('in router GET for pet by id');
-    const queryText = `SELECT * FROM pets WHERE id=$1;`;
+    const queryText = `SELECT pets.* FROM pets WHERE id=$1;`;
     pool.query(queryText).then((result) => {
         console.log(result.rows);
         res.send(result.rows);

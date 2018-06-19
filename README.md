@@ -1,8 +1,10 @@
 # pet-hotel-extended-weekend-assignment
 
-[x] delete for pets
-[] checkin
- - figure out get and put for checkedInPet
-[] don't delete owner unless there are no pets 
-[] remove milliseconds on DOM
-[] make it pretty - angular material
+
+Questions for Mary or Dev: 
+[] delete for pets: 
+- Was working Monday morning and then it broke after Josh and I were trying to fix my PUT.
+[] PUT has never worked. Same issue as I'm having with my DELETE. I have it working server side but it is not updating the DOM. It is grabbing the ID. 
+[] How would I only delete owners when they have 0 pets?
+
+Let me know if you need more details!

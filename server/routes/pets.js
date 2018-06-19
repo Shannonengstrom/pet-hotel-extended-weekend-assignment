@@ -5,9 +5,10 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
     console.log('in router GET');
-    const queryText = `SELECT * FROM pets
+    const queryText = `SELECT pets.*, owners.first_name FROM pets
     JOIN owners ON pets.owners_id = owners.id;`;
     pool.query(queryText).then((result) => {
+        console.log(result.rows);
         res.send(result.rows);
     }).catch((err) => {
         console.log('error getting all pets', err);
@@ -47,7 +48,7 @@ router.put('/:id', (req, res) => {
     console.log('in router.put', req.params.id);
     const petId = req.params.id;
     const queryText = `UPDATE pets
-    SET is_checked_in = CURRENT_TIMESTAMPE(0) WHERE is_checked_in IS NULL AND id=$1;`;
+    SET is_checked_in = CURRENT_TIMESTAMP WHERE is_checked_in IS NULL AND id=$1;`;
     pool.query(queryText, [petId])
         .then((result) => {
             console.log('updated pet with checkin date', petId);
@@ -63,6 +64,7 @@ router.get('/:id', (req, res) => {
     console.log('in router GET for pet by id');
     const queryText = `SELECT * FROM pets WHERE id=$1;`;
     pool.query(queryText).then((result) => {
+        console.log(result.rows);
         res.send(result.rows);
     }).catch((err) => {
         console.log('error getting pet by id', err);
